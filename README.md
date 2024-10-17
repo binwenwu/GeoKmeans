@@ -96,4 +96,4 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 > Original image and clustering result image
 
-![image](https://cdn.jsdelivr.net/gh/binwenwu/picgo_demo/img/image.webp)
+![image](https://cdn.jsdelivr.net/gh/binwenwu/picgo_demo/img/WX20241017-165529%402x.png)
