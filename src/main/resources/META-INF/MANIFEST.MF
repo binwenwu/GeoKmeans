@@ -1,0 +1,85 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: jackson-module-paranamer-2.10.0.jar gt-data-2.7.4.jar spark-
+ launcher_2.12-3.0.0.jar gt-opengis-2.7.4.jar common-2.6.0.jar jersey-gu
+ ice-1.19.jar shims-0.7.45.jar Jama-1.0.3.jar avro-1.8.2.jar httpclient-
+ 4.5.13.jar token-provider-1.0.1.jar commons-httpclient-3.1.jar jersey-c
+ ontainer-servlet-2.30.jar javassist-3.25.0-GA.jar jai-imageio-1.2-SNAP-
+ 20150402.jar gt-shapefile-2.7.4.jar jersey-container-servlet-core-2.30.
+ jar hadoop-client-3.2.4.jar jackson-core-2.10.0.jar jackson-module-scal
+ a_2.12-2.10.0.jar jdom2-2.0.4.jar gt-api-2.7.4.jar gt-metadata-2.7.4.ja
+ r slf4j-log4j12-1.7.30.jar jersey-json-1.19.jar xmlpull-1.1.3.1.jar gui
+ ce-servlet-4.0.jar ecore-2.6.1.jar unused-1.0.0.jar jetty-util-ajax-9.4
+ .43.v20210629.jar gt-referencing-2.7.4.jar jsch-0.1.55.jar jetty-server
+ -9.4.43.v20210629.jar lz4-java-1.7.1.jar jetty-security-9.4.43.v2021062
+ 9.jar paranamer-2.8.jar jackson-jaxrs-1.9.2.jar guice-4.0.jar gt-xml-2.
+ 7.4.jar jcommon-1.0.17.jar snappy-java-1.1.7.5.jar gson-2.9.0.jar jacks
+ on-core-asl-1.9.13.jar slf4j-reload4j-1.7.35.jar kerb-simplekdc-1.0.1.j
+ ar spark-network-shuffle_2.12-3.0.0.jar spark-network-common_2.12-3.0.0
+ .jar json4s-scalap_2.12-3.6.6.jar ceres-jai-5.0.4.jar gt-render-2.7.4.j
+ ar commons-cli-1.2.jar kerb-admin-1.0.1.jar kerb-util-1.0.1.jar reload4
+ j-1.2.18.3.jar oro-2.0.8.jar thumbnailator-0.4.5.jar spark-unsafe_2.12-
+ 3.0.0.jar py4j-0.10.9.jar jfreechart-1.0.14.jar commons-pool-1.5.4.jar 
+ jersey-media-jaxb-2.30.jar jersey-hk2-2.30.jar javax.activation-api-1.2
+ .0.jar htrace-core4-4.1.0-incubating.jar velocity-1.7.jar RoaringBitmap
+ -0.7.45.jar hadoop-yarn-client-3.2.4.jar hadoop-yarn-common-3.2.4.jar h
+ k2-locator-2.6.1.jar netty-all-4.1.47.Final.jar xsd-2.6.0.jar jackson-m
+ apper-asl-1.9.13.jar ivy-2.4.0.jar jts-1.13.jar chill-java-0.9.5.jar xz
+ -1.5.jar spark-kvstore_2.12-3.0.0.jar javax.inject-1.jar commons-loggin
+ g-1.1.3.jar okhttp-2.7.5.jar ceres-core-5.0.4.jar jetty-http-9.4.43.v20
+ 210629.jar leveldbjni-all-1.8.jar hadoop-common-3.2.4.jar compress-lzf-
+ 1.0.3.jar hadoop-yarn-api-3.2.4.jar netty-3.10.6.Final.jar scala-librar
+ y-2.12.10.jar commons-collections-3.2.2.jar commons-net-3.1.jar jdom-1.
+ 1.jar commons-jxpath-1.3.jar commons-codec-1.11.jar imageio-ext-utiliti
+ es-1.2-SENTBX.jar kerby-xdr-1.0.1.jar gt-coverage-2.7.4.jar jettison-1.
+ 1.jar kerb-common-1.0.1.jar hadoop-hdfs-client-3.2.4.jar metrics-jmx-4.
+ 1.1.jar gt-xsd-gml2-2.7.4.jar ceres-binding-5.0.4.jar gt-geotiff-2.7.4.
+ jar jakarta.activation-api-1.2.1.jar vecmath-1.3.2.jar asm-9.1.jar hado
+ op-hdfs-3.2.4.jar commons-crypto-1.0.0.jar woodstox-core-5.3.0.jar jett
+ y-xml-9.4.43.v20210629.jar jersey-server-2.30.jar kerb-client-1.0.1.jar
+  metrics-jvm-4.1.1.jar jul-to-slf4j-1.7.30.jar jsp-api-2.1.jar kryo-sha
+ ded-4.0.2.jar minlog-1.3.0.jar json4s-jackson_2.12-3.6.6.jar gt-main-2.
+ 7.4.jar nimbus-jose-jwt-9.8.1.jar jetty-util-9.4.43.v20210629.jar kerby
+ -pkix-1.0.1.jar hk2-utils-2.6.1.jar animal-sniffer-annotations-1.17.jar
+  jakarta.validation-api-2.0.2.jar chill_2.12-0.9.5.jar log4j-1.2.17.jar
+  commons-text-1.6.jar checker-qual-2.5.2.jar jackson-jaxrs-json-provide
+ r-2.10.5.jar jackson-jaxrs-base-2.10.5.jar aopalliance-repackaged-2.6.1
+ .jar kerby-asn1-1.0.1.jar commons-daemon-1.0.13.jar jersey-server-1.19.
+ jar commons-compress-1.21.jar json4s-core_2.12-3.6.6.jar commons-beanut
+ ils-1.9.4.jar okio-1.6.0.jar jaxb-impl-2.2.3-1.jar json4s-ast_2.12-3.6.
+ 6.jar metrics-graphite-4.1.1.jar jersey-core-1.19.jar snap-runtime-5.0.
+ 4.jar pyrolite-4.30.jar jersey-client-2.30.jar jakarta.annotation-api-1
+ .3.5.jar curator-recipes-2.7.1.jar kerb-identity-1.0.1.jar aopalliance-
+ 1.0.jar xpp3_min-1.1.4c.jar hadoop-annotations-3.2.4.jar commons-lang3-
+ 3.9.jar httpcore-4.4.13.jar curator-framework-2.7.1.jar spark-core_2.12
+ -3.0.0.jar mlibwrapper-jai-1.1.3.jar clibwrapper-jiio-1.2-20090918.jar 
+ gt-epsg-hsql-2.7.4.jar jakarta.ws.rs-api-2.1.6.jar xbean-asm7-shaded-4.
+ 15.jar j2objc-annotations-1.1.jar scala-reflect-2.12.10.jar scala-libra
+ ry-2.12.10.jar jersey-common-2.30.jar accessors-smart-2.4.7.jar commons
+ -io-2.8.0.jar jdom-1.0.jar gt-graph-2.7.4.jar audience-annotations-0.5.
+ 0.jar picocontainer-1.2.jar snap-geotiff-5.0.4.jar jetty-io-9.4.43.v202
+ 10629.jar jnn-1.7.jar zstd-jni-1.4.4-3.jar hadoop-auth-3.2.4.jar scala-
+ xml_2.12-1.2.0.jar jsr-275-1.0-beta-2.jar jakarta.xml.bind-api-2.3.2.ja
+ r jsr305-3.0.0.jar commons-lang-2.6.jar stream-2.9.6.jar kerby-config-1
+ .0.1.jar hsqldb-1.8.0.7.jar javax.servlet-api-3.1.0.jar hk2-api-2.6.1.j
+ ar js-1.7R1.jar jetty-webapp-9.4.43.v20210629.jar jai-core-1.1.3.jar me
+ trics-core-4.1.1.jar gt-wms-2.7.4.jar gt-xsd-gml3-2.7.4.jar failureacce
+ ss-1.0.jar commons-configuration2-2.1.1.jar avro-mapred-1.8.2-hadoop2.j
+ ar json-smart-2.4.7.jar xstream-1.4.8.jar dnsjava-2.1.7.jar error_prone
+ _annotations-2.2.0.jar spark-tags_2.12-3.0.0.jar jackson-xc-1.9.2.jar g
+ t-xsd-core-2.7.4.jar jsr311-api-1.1.1.jar avro-ipc-1.8.2.jar protobuf-j
+ ava-2.5.0.jar jackson-module-jaxb-annotations-2.10.5.jar zookeeper-3.4.
+ 14.jar kerb-core-1.0.1.jar commons-math3-3.4.1.jar ceres-binio-5.0.4.ja
+ r jakarta.inject-2.6.1.jar kerb-server-1.0.1.jar hadoop-mapreduce-clien
+ t-common-3.2.4.jar jersey-client-1.19.jar stax2-api-4.2.1.jar jcip-anno
+ tations-1.0-1.jar metrics-json-4.1.1.jar hadoop-mapreduce-client-core-3
+ .2.4.jar jackson-annotations-2.10.0.jar kerby-util-1.0.1.jar kerb-crypt
+ o-1.0.1.jar gt-cql-2.7.4.jar slf4j-api-1.7.30.jar jetty-servlet-9.4.43.
+ v20210629.jar scala-reflect-2.12.10.jar snap-core-5.0.4.jar objenesis-2
+ .5.1.jar osgi-resource-locator-1.0.3.jar guava-27.0-jre.jar jersey-serv
+ let-1.19.jar hadoop-mapreduce-client-jobclient-3.2.4.jar listenablefutu
+ re-9999.0-empty-to-avoid-conflict-with-guava.jar re2j-1.1.jar curator-c
+ lient-2.13.0.jar jaxb-api-2.2.11.jar activation-1.1.1.jar imageio-ext-t
+ iff-1.2-SENTBX.jar ceres-glayer-5.0.4.jar jackson-databind-2.10.0.jar j
+ ai-codec-1.1.3.jar jcl-over-slf4j-1.7.30.jar
+

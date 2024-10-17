@@ -1,0 +1,112 @@
+package cn.whu.geokmeans.kmeans
+
+import cn.whu.geokmeans.core.GeoVector
+import org.apache.spark.rdd.RDD
+
+/**
+  * Spark并行化KMeans
+  * @param dataElemRDD 数据RDD
+  * @param K 类别数
+  * @param maxIterations 最大迭代次数
+  * @param epsilon 精度
+  */
+class ParalleledKMeans(dataElemRDD: RDD[KMeansDataElem], K: Int, maxIterations: Int, epsilon: Double = 1e-2) {
+
+  private val mDataElemRDD = dataElemRDD
+  private val mK: Int = K
+  private val mMaxItr: Int = maxIterations
+  private val mEpsilon: Double = epsilon
+  private var mCost: Double = Double.MaxValue
+
+  /**
+    * 获得数据RDD
+    *
+    * @return
+    */
+  def getDataElemRDD: RDD[KMeansDataElem] = this.mDataElemRDD
+
+  /**
+    * 获得K
+    *
+    * @return
+    */
+  def getK: Int = this.mK
+
+  /**
+    * 获得聚类得到的Cost
+    *
+    * @return
+    */
+  def getCost: Double = this.mCost
+
+  /**
+    * 获得最大迭代次数
+    *
+    * @return
+    */
+  def getMaxIterations: Int = this.mMaxItr
+
+  /**
+    * 获得迭代精度
+    *
+    * @return
+    */
+  def getEpsilon: Double = this.mEpsilon
+
+  /**
+    * 运行算法，获得最终聚类中心
+    *
+    * @return
+    */
+  def runAlgorithm(): KMeansModel = {
+    val dataElemRDD = this.getDataElemRDD
+    val sparkContext = dataElemRDD.sparkContext
+    val k = this.getK
+    // 获得初始聚类中心
+    val arrCenters = dataElemRDD.takeSample(withReplacement = true, this.getK, 123L)
+    // 迭代运算
+    var iteration: Int = 0
+    var isContinue = true
+    while (iteration < maxIterations && isContinue) {
+      // 广播聚类中心
+      val bcArrCenters = sparkContext.broadcast(arrCenters)
+      // 累加器
+      val costAccumulator = sparkContext.accumulator[Double](0.0)
+      // 对每个分区的数据进行聚类
+      val clusterElemRDD = dataElemRDD.mapPartitions(partition => {
+        val centers = bcArrCenters.value // 聚类中心点数组
+        val arrSumNumber: Array[Long] = Array.fill(k)(0L) // 每个聚类向量数量
+        val dim = centers(0).getVector.getDimension
+        val arrSumVectors: Array[GeoVector] = Array.fill(k)(new GeoVector(dim)) // 每个聚类向量和
+        partition.foreach(dataElem => {
+          val (index, cost) = KMeans.findClosest(dataElem, centers)
+          arrSumNumber(index) += 1
+          arrSumVectors(index) = arrSumVectors(index) + dataElem.getVector
+          dataElem.setClusterIndex(index)
+          costAccumulator.add(cost)
+        })
+        val arrCentersInPartition = for (i <- 0 until k) yield {
+          if (arrSumNumber(i) == 0) {
+            arrSumNumber(i) = 1
+          }
+          (i, arrSumVectors(i) / arrSumNumber(i).toFloat) // 每个聚类的新聚类中心
+        }
+        arrCentersInPartition.iterator
+      })
+      // 合并每个分区的新聚类中心得到所有数据的新聚类中心
+      val newArrCentersWithIndex = clusterElemRDD.reduceByKey((v1, v2) => (v1 + v2) / 2.0f).collect()
+      bcArrCenters.unpersist(blocking = false)
+      newArrCentersWithIndex.indices.foreach(i => {
+        val newCenter = newArrCentersWithIndex(i)._2
+        arrCenters(i).setVector(newCenter)
+        arrCenters(i).setClusterIndex(i)
+      })
+      this.mCost = costAccumulator.value
+      // 迭代数加1
+      iteration += 1
+    }
+    println("iteration: " + iteration)
+    new KMeansModel(arrCenters)
+  }
+
+}
