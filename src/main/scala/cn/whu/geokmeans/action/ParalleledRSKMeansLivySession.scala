@@ -130,7 +130,7 @@ object ParalleledRSKMeansLivySession {
     val endTime = new Date().getTime
     println("任务耗时：" + (endTime - startTime) + "毫秒")
 
-    sc.stop()
+
   }
 
 
@@ -156,6 +156,8 @@ object ParalleledRSKMeansLivySession {
 
     // 运行
     runMain(sc, parameters)
+
+    sc.stop()
   }
 
 
